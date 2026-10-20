@@ -1,78 +1,32 @@
 const loginForm = document.getElementById("loginForm");
-
-const email = document.getElementById("email");
 const password = document.getElementById("password");
-
-const emailError = document.getElementById("emailError");
-const passwordError = document.getElementById("passwordError");
-
-const successMessage = document.getElementById("successMessage");
-
 const togglePassword = document.getElementById("togglePassword");
-
+const formMessage = document.getElementById("formMessage");
 
 loginForm.addEventListener("submit", function (event) {
-
-    // Stop page from refreshing
     event.preventDefault();
-
-    // Clear previous messages
-    emailError.textContent = "";
-    passwordError.textContent = "";
-    successMessage.textContent = "";
-
-    let isValid = true;
-
-
-    // Email validation
-    if (email.value.trim() === "") {
-
-        emailError.textContent = "Email is required.";
-        isValid = false;
-
-    } else if (!email.value.includes("@")) {
-
-        emailError.textContent = "Please enter a valid email.";
-        isValid = false;
-    }
-
-
-    // Password validation
-    if (password.value.trim() === "") {
-
-        passwordError.textContent = "Password is required.";
-        isValid = false;
-
-    } else if (password.value.length < 6) {
-
-        passwordError.textContent =
-            "Password must be at least 6 characters.";
-
-        isValid = false;
-    }
-
-
-    // Login successful
-    if (isValid) {
-
-        successMessage.textContent = "Login successful!";
-
-        loginForm.reset();
-    }
+    formMessage.textContent =
+        "This prototype is not connected to college authentication yet. No credentials were sent or checked.";
 });
 
-
-// Show / Hide password
 togglePassword.addEventListener("click", function () {
+    const shouldShowPassword = password.type === "password";
+    password.type = shouldShowPassword ? "text" : "password";
+    togglePassword.textContent = shouldShowPassword ? "Hide" : "Show";
+    togglePassword.setAttribute("aria-label", shouldShowPassword ? "Hide password" : "Show password");
+    togglePassword.setAttribute("aria-pressed", String(shouldShowPassword));
+});
 
-    if (password.type === "password") {
+document.getElementById("forgotPassword").addEventListener("click", function () {
+    formMessage.textContent =
+        "Password recovery will be available when the college authentication method is chosen.";
+});
 
-        password.type = "text";
-        togglePassword.textContent = "Hide";
+document.getElementById("getHelp").addEventListener("click", function () {
+    formMessage.textContent =
+        "For this prototype, contact your college IT support team for account access help.";
+});
 
-    } else {
-
-        password.type = "password";
-        togglePassword.textContent = "Show";
-    }
+loginForm.addEventListener("input", function () {
+    formMessage.textContent = "";
 });
