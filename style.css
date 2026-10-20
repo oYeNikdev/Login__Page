@@ -1,15 +1,12 @@
-@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap");
-
 :root {
     color-scheme: light;
-    font-family: "DM Sans", "Segoe UI", sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     color: #172b45;
     background: #f3f6fa;
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-optical-sizing: auto;
     font-weight: 400;
     --navy: #102b4e;
     --blue: #2459a6;
@@ -84,7 +81,7 @@ button {
     gap: 12px;
     width: fit-content;
     color: inherit;
-    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     font-size: 15px;
     font-weight: 700;
     letter-spacing: -0.02em;
@@ -100,7 +97,7 @@ button {
     border-radius: 12px;
     background: rgba(255, 255, 255, 0.14);
     color: inherit;
-    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     font-size: 18px;
     font-weight: 800;
 }
@@ -122,7 +119,7 @@ button {
 
 .welcome-copy h1 {
     margin: 0;
-    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     font-size: clamp(32px, 4vw, 46px);
     font-weight: 700;
     letter-spacing: -0.055em;
@@ -170,7 +167,7 @@ button {
 .login-card h2 {
     margin: 0;
     color: #182c46;
-    font-family: "Manrope", "Segoe UI", sans-serif;
+    font-family: "Segoe UI", Arial, sans-serif;
     font-size: 29px;
     font-weight: 700;
     letter-spacing: -0.045em;
